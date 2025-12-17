@@ -53,6 +53,23 @@ Azure offers command-line tools for managing resources efficiently:
 * **Azure CLI**: Cross-platform tool with simple commands
 * **Azure PowerShell**: Script-based tool using PowerShell cmdlets
 
+
+
+| **Command**               | **Purpose (Why we use it)**               |
+| ------------------------- | ----------------------------------------- |
+| `az login`                | Sign in to Azure account                  |
+| `az account list`         | View all Azure subscriptions              |
+| `az account set`          | Select the active subscription            |
+| `az group create`         | Create a resource group                   |
+| `az group list`           | List all resource groups                  |
+| `az group delete`         | Delete a resource group and its resources |
+| `az vm list`              | View all virtual machines                 |
+| `az vm start`             | Start a virtual machine                   |
+| `az vm stop`              | Stop a virtual machine to save cost       |
+| `az storage account list` | View storage accounts                     |
+| `az help`                 | Get help for Azure CLI commands           |
+| `az version`              | Check Azure CLI version                   |
+
 ---
 
 ### 1.3.4 Command-Line Interface Options for Azure
