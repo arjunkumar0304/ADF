@@ -86,3 +86,204 @@ These tools help automate tasks and manage resources faster than the portal.
 
 PowerShell allows automation of Azure operations such as creating resources, configuring services, and managing access using reusable scripts.
 
+
+
+
+
+
+## 1.4 Azure Storage Account (Types)
+
+An **Azure Storage Account** is a container that holds different types of storage services. It provides **secure, scalable, and highly available cloud storage**.
+
+### Why Azure Storage?
+
+* Store data in the cloud
+* Highly scalable and cost‑effective
+* Secure with access control and encryption
+* Used by almost all Azure services
+
+---
+
+### 1.4.1 Blob Storage
+
+**What it is:**
+Blob Storage is used to store **unstructured data**.
+
+**Examples of unstructured data:**
+
+* Images
+* Videos
+* PDFs
+* Text files
+* Backup files
+
+**Real‑time use case:**
+
+* Store website images
+* Store large CSV files for analytics
+* Data lake for big data processing
+
+**Why use Blob Storage?**
+
+* Very cheap for large data
+* Supports big data and analytics tools (ADF, Synapse)
+
+---
+
+### 1.4.2 File Storage
+
+**What it is:**
+File Storage provides **cloud file shares**, similar to a local file system.
+
+**Real‑time use case:**
+
+* Share files between multiple virtual machines
+* Lift‑and‑shift on‑premise file servers to Azure
+
+**Why use File Storage?**
+
+* Supports SMB protocol
+* Easy migration from traditional file servers
+
+---
+
+### 1.4.3 Table Storage
+
+**What it is:**
+Table Storage is a **NoSQL key‑value storage** for structured data.
+
+**Real‑time use case:**
+
+* Store user profiles
+* Store application configuration data
+* Store logs or metadata
+
+**Why use Table Storage?**
+
+* Fast access
+* Schema‑less design
+* Cost‑effective for large datasets
+
+---
+
+### 1.4.4 Queue Storage
+
+**What it is:**
+Queue Storage is used for **message storage** between applications.
+
+**Real‑time use case:**
+
+* Order processing systems
+* Background job processing
+* Decoupling applications
+
+**Why use Queue Storage?**
+
+* Improves application reliability
+* Supports asynchronous communication
+
+---
+
+## 1.5 Azure Data Factory (ADF)
+
+### Introduction to ADF
+
+Azure Data Factory is a **cloud‑based ETL/ELT service** used to **move and transform data**.
+
+**ADF is mainly used for:**
+
+* Data ingestion
+* Data integration
+* Data orchestration
+
+
+> Azure Data Factory is a cloud ETL service used to extract data from different sources, transform it, and load it into a destination.
+
+---
+
+### Key Components of ADF
+
+#### 1. Pipelines
+
+**What it is:**
+A pipeline is a **logical container** that groups multiple activities.
+
+**Example:**
+
+* Copy data from Blob Storage to Azure SQL Database
+
+---
+
+#### 2. Activities
+
+**What it is:**
+Activities define **what action to perform**.
+
+**Examples:**
+
+* Copy activity
+* Data flow activity
+* Lookup activity
+
+---
+
+#### 3. Datasets
+
+**What it is:**
+Datasets represent the **data structure** inside a data store.
+
+**Example:**
+
+* A CSV file in Blob Storage
+* A table in Azure SQL Database
+
+---
+
+#### 4. Linked Services
+
+**What it is:**
+Linked Services are **connection strings** to external resources.
+
+**Example:**
+
+* Connection to Blob Storage
+* Connection to SQL Database
+
+---
+
+## 1.6 Azure Key Vault
+
+Azure Key Vault is a service used to **securely store and manage sensitive information**.
+
+### 1.6.1 Securely Store and Manage Sensitive Information
+
+**What can be stored?**
+
+* Secrets (passwords, connection strings)
+* Keys (encryption keys)
+* Certificates (SSL/TLS)
+
+**Why use Azure Key Vault?**
+
+* Improves security
+* Prevents hard‑coding passwords
+* Centralized secret management
+
+**Real‑time use case:**
+
+* Store database passwords
+* Store API keys
+* Secure access for ADF, VMs, and applications
+
+
+## Summary
+
+| Service            | Purpose                   |
+| ------------------ | ------------------------- |
+| Blob Storage       | Store unstructured data   |
+| File Storage       | Cloud file shares         |
+| Table Storage      | NoSQL structured data     |
+| Queue Storage      | Message handling          |
+| Azure Data Factory | Data integration and ETL  |
+| Azure Key Vault    | Secure secrets management |
+
