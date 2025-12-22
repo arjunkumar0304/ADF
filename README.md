@@ -465,3 +465,154 @@ Execution control activities manage **pipeline flow and logic**.
 ---
 
 
+
+## 1.8.3 Control Flow Activities
+
+Control Flow Activities **control how a pipeline runs** (order, conditions, looping, waiting, checks). They do not move data themselves.
+
+### 1.8.3.1 Wait Activity
+
+**Purpose:** Pause pipeline execution for a fixed time.
+
+**Key Points:**
+
+* Time is given in **seconds**
+* Used to delay next activity
+
+**Practical Scenario:**
+
+* Wait 10 minutes before checking if a file arrives
+
+**Example:**
+
+* Wait = 600 seconds → then run Copy Activity
+
+---
+
+### 1.8.3.2 Until Activity
+
+**Purpose:** Repeat activities **until a condition becomes true**.
+
+**Key Points:**
+
+* Works like a loop
+* Stops when condition = TRUE
+
+**Practical Scenario:**
+
+* Keep checking a folder until a file is available
+
+**Example Condition:**
+
+```
+@equals(activity('Get Metadata').output.exists, true)
+```
+
+---
+
+### 1.8.3.3 Get Metadata Activity
+
+**Purpose:** Get information about a file or folder.
+
+**What it can return:**
+
+* exists
+* size
+* lastModified
+* childItems
+
+**Practical Scenario:**
+
+* Check whether a file exists before copying it
+
+**Common Use:**
+
+* Used with **If Condition** or **Until** activity
+
+---
+
+### 1.8.3.4 Lookup Activity
+
+**Purpose:** Read data from a database or file (small data).
+
+**Key Points:**
+
+* Returns rows (JSON output)
+* Used for parameters, conditions, validation
+
+**Practical Scenario:**
+
+* Get control table values
+* Get list of tables to load
+
+**Example Use:**
+
+* Lookup → ForEach → Copy data
+
+---
+
+### 1.8.3.5 Stored Procedure Activity
+
+**Purpose:** Execute a stored procedure in a database.
+
+**Key Points:**
+
+* Works with Azure SQL / SQL Server
+* Can pass input & output parameters
+
+**Practical Scenario:**
+
+* Update audit table after load
+* Perform data validation
+
+**Example:**
+
+* Execute `sp_Update_Load_Status`
+
+---
+
+## 1.8.4 Pipelines and Triggers
+
+### Pipelines
+
+**Definition:**
+A pipeline is a **group of activities** that performs a task.
+
+**Example:**
+
+* Get Metadata → If Condition → Copy Data → Stored Procedure
+
+---
+
+### Triggers
+
+**Purpose:** Decide **when** a pipeline runs.
+
+**Types of Triggers:**
+
+1. **Schedule Trigger** – Run at fixed time (daily, hourly)
+2. **Tumbling Window Trigger** – Time‑based batches
+3. **Event Trigger** – Run when file arrives
+
+**Practical Scenario:**
+
+* Run pipeline every day at 2 AM
+* Trigger pipeline when a file is uploaded
+
+---
+
+
+---
+
+## Summary Table
+
+| Activity         | Use Case                  |
+| ---------------- | ------------------------- |
+| Wait             | Pause execution           |
+| Until            | Loop until condition true |
+| Get Metadata     | Check file/folder info    |
+| Lookup           | Read small reference data |
+| Stored Procedure | Run DB logic              |
+
+---
+
