@@ -616,3 +616,72 @@ A pipeline is a **group of activities** that performs a task.
 
 ---
 
+
+
+## 1. Azure Databricks Notebooks
+
+
+### 1.1 Notebook Integration Overview
+
+Azure Databricks integrates with key Azure services:
+
+* **Azure Data Factory (ADF)** – orchestration
+* **Azure Blob Storage / ADLS Gen2** – data storage
+* **Azure DevOps / GitHub** – version control and CI/CD
+
+**Basic Flow:**
+Storage → Databricks Notebook → Processed Data → ADF / Jobs
+
+---
+
+### 1.2 Notebook Orchestration
+
+Notebook orchestration means controlling the order and execution of notebooks using **ADF Databricks Notebook Activity** or **Databricks Jobs**.
+
+**Example:**
+
+* Notebook 1: Data ingestion
+* Notebook 2: Data cleaning
+* Notebook 3: Data transformation
+
+ADF ensures sequential execution and monitoring.
+
+---
+
+## 2. Azure DevOps – CI/CD Integration
+
+Azure DevOps is used to automate notebook development and deployment.
+
+### 2.1 Continuous Integration and Development
+
+**CI/CD Flow:**
+
+1. Notebooks are stored in **Azure Repos (Git)**
+2. Code changes are committed and validated
+3. Pipelines deploy notebooks to Databricks workspace
+
+**Benefits:**
+
+* Faster deployment
+* Reduced manual errors
+* Better team collaboration
+==========================================================================================================================================================
+
+
+“I created an Azure Data Factory pipeline with a Databricks Notebook activity.
+I configured an Azure Databricks linked service using an access token and existing interactive cluster.
+The pipeline successfully triggered the Databricks notebook and executed Python code.
+I monitored the execution in ADF and validated the success in Databrick
+
+
+
+<img width="1899" height="1068" alt="Screenshot 2025-12-23 171459" src="https://github.com/user-attachments/assets/37e0de16-7cd6-4aa1-a1a7-66da46c6301f" />
+
+
+
+<img width="1884" height="1077" alt="Screenshot 2025-12-23 173013" src="https://github.com/user-attachments/assets/790bb171-d373-448c-b101-0aaffab0dbf7" />
+
+
+
+
+<img width="1883" height="1031" alt="Screenshot 2025-12-23 172009" src="https://github.com/user-attachments/assets/da2e6629-ea10-4d87-b74a-9e1187c6b71f" />
