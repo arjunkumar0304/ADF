@@ -5,7 +5,7 @@
 
 ### 1.1 Global Data Centers
 
-Azure operates data centers across multiple countries and regions. These data centers ensure high availability, low latency, data security, and disaster recovery. Regions may also contain Availability Zones to protect applications from failures.
+Azure operates data centers across multiple countries and regions. These data centers ensure high availability, low latency, data security, and disaster recovery. Regions may also contain Availability Zones to protect applications from failures.   
 
 ---
 
