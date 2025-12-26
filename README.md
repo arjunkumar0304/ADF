@@ -685,3 +685,106 @@ I monitored the execution in ADF and validated the success in Databrick
 
 
 <img width="1883" height="1031" alt="Screenshot 2025-12-23 172009" src="https://github.com/user-attachments/assets/da2e6629-ea10-4d87-b74a-9e1187c6b71f" />
+
+
+
+## 1. Copy Data from ADLS (Using Azure Data Factory)
+
+### Objective
+
+Copy files from **ADLS Gen2** to a target location (another ADLS folder / Blob / SQL DB).
+
+### Steps
+
+1. Create **Azure Data Factory**
+2. Open **ADF Studio → Author**
+3. Create **Linked Service** for ADLS Gen2
+4. Create **Dataset** pointing to source ADLS path
+5. Create target **Dataset** (sink)
+6. Create a **Pipeline**
+7. Drag **Copy Data Activity**
+8. Select source dataset and sink dataset
+9. Validate → Debug → Publish
+
+
+### Use Case
+
+Used when moving raw data from landing zone to processed zone.
+
+---
+
+## 2. Copy Different File Formats from ADLS Gen2
+
+### Supported File Formats
+
+* CSV
+* JSON
+* Parquet
+* Avro
+* TXT
+
+### Objective
+
+Copy multiple file formats from ADLS using a **single pipeline**.
+
+### Steps
+
+1. Create datasets for each file format
+2. Use **Parameterization** in dataset (file name / folder path)
+3. Use **ForEach Activity** in pipeline
+4. Inside ForEach, use **Copy Data Activity**
+5. Pass file format and path dynamically
+6. Validate and Debug pipeline
+
+### Output
+
+* Multiple file formats copied successfully
+
+### Use Case
+
+Useful when a data lake contains mixed data formats from different sources.
+
+---
+
+## 3. Creating Pipelines and Jobs in Azure Databricks
+
+### Objective
+
+Process data using Databricks notebooks and automate execution using jobs.
+
+### 3.1 Create Databricks Notebook
+
+1. Open **Azure Databricks Workspace**
+2. Create **Notebook** (Python / SQL)
+3. Read data from ADLS using DBFS or ABFS path
+4. Perform transformations
+5. Save output back to ADLS
+
+### 3.2 Create Databricks Job
+
+1. Go to **Workflows → Jobs**
+2. Click **Create Job**
+3. Select notebook
+4. Attach cluster (existing or new)
+5. Configure parameters (optional)
+6. Run job
+
+### 3.3 Orchestrate Databricks from ADF
+
+1. Open ADF Pipeline
+2. Drag **Databricks Notebook Activity**
+3. Connect Databricks Linked Service
+4. Select notebook path
+5. Debug and trigger pipeline
+
+### Output
+
+* Databricks notebook executed successfully
+* Transformed data stored in ADLS
+
+### Use Case
+
+Used for large‑scale data processing and transformations.
+
+---
+
