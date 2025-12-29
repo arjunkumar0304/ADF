@@ -746,3 +746,24 @@ Useful when a data lake contains mixed data formats from different sources.
 
 ---
 
+# Incremental Loading?
+
+* Incremental loading meansLoading only new or changed data, not the entire data every time.
+
+* Instead of reloading full table daily, we load only delta data (new rows / updated rows).
+
+
+
+
+# Handling Error Rows in Mapping Data Flow
+🔹 What are Error Rows?
+
+Error rows occur when:
+
+Data type mismatch
+
+Null value in NOT NULL column
+
+Duplicate keys
+
+Conversion errors
