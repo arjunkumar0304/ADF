@@ -755,15 +755,3 @@ Useful when a data lake contains mixed data formats from different sources.
 
 
 
-# Handling Error Rows in Mapping Data Flow
-🔹 What are Error Rows?
-
-Error rows occur when:
-
-Data type mismatch
-
-Null value in NOT NULL column
-
-Duplicate keys
-
-Conversion errors
