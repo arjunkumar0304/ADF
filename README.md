@@ -752,6 +752,7 @@ Useful when a data lake contains mixed data formats from different sources.
 
 * Instead of reloading full table daily, we load only delta data (new rows / updated rows).
 
+![Uploading Screenshot 2025-12-29 221730.png…]()
 
 
 
