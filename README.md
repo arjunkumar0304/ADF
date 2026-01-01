@@ -756,3 +756,41 @@ Useful when a data lake contains mixed data formats from different sources.
 
 
 
+# mapping data flow 
+
+Mapping Data Flow is a visual, code-free ETL tool inside Azure Data Factory (ADF) used to transform data at scale using Apache Spark.
+
+
+# Why we use Mapping Data Flow
+
+* Clean data (filter, remove nulls, deduplicate)
+
+* Transform data (derived columns, joins, aggregates)
+
+* Handle large data (Spark behind the scenes)
+
+* No coding required (expressions only)
+
+#   Transformations (Core part)
+
+
+| Transformation        | Use                           |
+| --------------------- | ----------------------------- |
+| **Filter**            | Remove unwanted rows          |
+| **Derived Column**    | Create or modify columns      |
+| **Select**            | Choose required columns       |
+| **Aggregate**         | Sum, count, group by          |
+| **Join**              | Combine two datasets          |
+| **Sort**              | Order data                    |
+| **Conditional Split** | Split valid & invalid records |
+| **Sink**              | Target location               |
+
+
+<img width="1918" height="1079" alt="Screenshot 2026-01-01 215132" src="https://github.com/user-attachments/assets/cd98a288-a303-4324-8804-c15f392cb6b9" />
+
+
+<img width="1919" height="1074" alt="Screenshot 2026-01-01 215502" src="https://github.com/user-attachments/assets/ccb50e97-6695-4d3f-94c7-4f1e622c9fec" />
+
+
+
+
